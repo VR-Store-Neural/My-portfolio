@@ -1,9 +1,9 @@
 -- Створення таблиць
 
 CREATE TABLE department (
-		id INTEGER,
-		name VARCHAR(255),
-		PRIMARY KEY (id)
+	id INTEGER,
+	name VARCHAR(255),
+	PRIMARY KEY (id)
 );
 
 CREATE TABLE employees (
@@ -28,8 +28,8 @@ CREATE TABLE contract (
 );
 
 CREATE TABLE executor (
-		tab_no INTEGER,
-		contract_id INTEGER
+	tab_no INTEGER,
+	contract_id INTEGER
 );
 
 -- Наповнення таблиць
@@ -111,79 +111,79 @@ INSERT INTO customer(
   
 INSERT INTO contract(
 	id, customer_id, amount)
-	VALUES(1,1,20000);
+	VALUES(1,1,2100);
 INSERT INTO contract(
 	id, customer_id, amount)
-	VALUES(2,2,10000);
+	VALUES(2,2,1300);
 INSERT INTO contract(
 	id, customer_id, amount)
-	VALUES(3,5,50000);
+	VALUES(3,5,4800);
 INSERT INTO contract(
 	id, customer_id, amount)
-	VALUES(4,7,150000);
+	VALUES(4,7,11500);
 INSERT INTO contract(
 	id, customer_id, amount)
-	VALUES(5,8,200000);
+	VALUES(5,8,17800);
 INSERT INTO contract(
 	id, customer_id, amount)
-	VALUES(6,9,14000);
+	VALUES(6,9,2300);
 INSERT INTO contract(
 	id, customer_id, amount)
-	VALUES(7,5,26000);
+	VALUES(7,5,2900);
 INSERT INTO contract(
 	id, customer_id, amount)
-	VALUES(8,4,60000);
+	VALUES(8,4,6200);
 INSERT INTO contract(
 	id, customer_id, amount)
-	VALUES(9,3,30000);
+	VALUES(9,3,3150);
 INSERT INTO contract(
 	id, customer_id, amount)
-	VALUES(10,1,32000);
+	VALUES(10,1,3200);
 INSERT INTO contract(
 	id, customer_id, amount)
-	VALUES(11,2,30000);
+	VALUES(11,2,3000);
 INSERT INTO contract(
 	id, customer_id, amount)
-	VALUES(12,8,40000);
+	VALUES(12,8,3700);
 INSERT INTO contract(
 	id, customer_id, amount)
-	VALUES(13,7,50000);
+	VALUES(13,7,5400);
 INSERT INTO contract(
 	id, customer_id, amount)
-	VALUES(14,9,60000);
+	VALUES(14,9,6300);
 INSERT INTO contract(
 	id, customer_id, amount)
-	VALUES(15,5,70000);
+	VALUES(15,5,7250);
 INSERT INTO contract(
 	id, customer_id, amount)
-	VALUES(16,4,80000);
+	VALUES(16,4,8800);
 INSERT INTO contract(
 	id, customer_id, amount)
-	VALUES(17,3,90000);
+	VALUES(17,3,9200);
 INSERT INTO contract(
 	id, customer_id, amount)
-	VALUES(18,4,100000);
+	VALUES(18,4,9900);
 INSERT INTO contract(
 	id, customer_id, amount)
-	VALUES(19,2,110000);
+	VALUES(19,2,13100);
 INSERT INTO contract(
 	id, customer_id, amount)
-	VALUES(20,1,120000);
+	VALUES(20,1,12200);
 INSERT INTO contract(
 	id, customer_id, amount)
-	VALUES(21,2,130000);
+	VALUES(21,2,13300);
 INSERT INTO contract(
 	id, customer_id, amount)
-	VALUES(22,7,140000);
+	VALUES(22,7,14400);
 INSERT INTO contract(
 	id, customer_id, amount)
-	VALUES(23,8,150000);
+	VALUES(23,8,15500);
 INSERT INTO contract(
 	id, customer_id, amount)
-	VALUES(24,9,160000);
+	VALUES(24,9,16600);
 INSERT INTO contract(
 	id, customer_id, amount)
-	VALUES(25,3,170000);
+	VALUES(25,3,17000);
   
   
   
