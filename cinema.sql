@@ -31,19 +31,6 @@ create table SoldTickets (
     primary key (ticket_id),
     foreign key (schedule_id) references Schedule(schedule_id)
 
-/* Опис запиту:
-create table SoldTickets створює таблицю "SoldTickets".
-ticket_id INT створює стовпець ticket_id с типом данних INTEGER.
-schedule_id INT створює стовпець schedule_id с типом данних INTEGER для зберігання посилання на розклад.
-seat_number INT створює стовпець seat_number с типом данних INTEGER для зберігання номеру місця.
-customer_name VARCHAR(255) створює стовпець customer_name с типом данних VARCHAR(255) для збереження імені покупця.
-primary key (ticket_id) встановлює первинний ключ для товпчика ticket_id, що означає, 
-що значення в цьому стовпці будуть унікальними і використовуватимуться для ідентифікації кожного рядка в таблиці.
-foreign key (schedule_id) REFERENCES Schedule(schedule_id) встановлює зовнішній ключ (FOREIGN KEY) для стовпчика schedule_id, 
-який посилається на стовпець schedule_id таблицы "Schedule".
-*/
-);
-
 -- Наповнення таблиць
 
 INSERT INTO Movies(movie_id, title, duration)
@@ -190,14 +177,6 @@ HAVING COUNT(*) > 1;
 UPDATE SoldTickets
 	SET seat_number = 19
 	WHERE ticket_id = 20;
-    
-/* Опис запиту:
-UPDATE SoldTickets: Це вказує, що ми оновлюємо дані в таблиці SoldTickets.
-SET seat_number = 19: Це вказує, що ми змінюємо значення поля seat_number на 19.
-WHERE ticket_id = 20: Це обмеження вказує, що оновлення повинно застосовуватися лише до рядка, 
-де значення поля ticket_id дорівнює 20. Тобто, лише квиток з ticket_id рівним 20 буде мати номер місця змінений на 19.    
-*/
-
 UPDATE SoldTickets
 	SET seat_number = 11
 	WHERE ticket_id = 51;
@@ -317,7 +296,7 @@ ORDER BY
     CASE WHEN movie_title = 'Total' THEN 1 ELSE 0 END,
     total_revenue DESC;
   
-  -- Задача 8: Показати кількість проданих квитків по кожному сеансу, суму, на яку продані квитки на кожний сеанс, назву фільму сеансу
+-- Задача 8: Показати кількість проданих квитків по кожному сеансу, суму, на яку продані квитки на кожний сеанс, назву фільму сеансу
 
 SELECT  s.schedule_id AS schedule, 
 		m.title as movie_title,
