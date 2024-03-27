@@ -1,0 +1,582 @@
+{
+	"id": "111011c0-6fb4-4227-8a45-96e95e50030a",
+	"name": "GoIT",
+	"timestamp": "2024-03-27T18:22:18.933Z",
+	"collection_id": "25694159-c9c2ca16-2d5c-4739-b8ee-6d48c447480a",
+	"folder_id": 0,
+	"environment_id": "25694159-79bcd912-4953-4b3a-bc32-5d50295f2410",
+	"totalPass": 34,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2024-03-27T18:22:12.402Z",
+	"totalFail": 1,
+	"results": [
+		{
+			"id": "47273f3a-1a21-4511-97de-1ff010829b0a",
+			"name": "Name of all boards",
+			"url": "https://api.trello.com/1/members/me/boards?fields=name,url&key=&token=",
+			"time": 236,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 500ms": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 500ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				236
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 500ms": true
+				}
+			]
+		},
+		{
+			"id": "d1e14d08-47c9-4e58-afc3-ddf1f685ffb4",
+			"name": "List of all boards",
+			"url": "https://api.trello.com/1/members/me/boards?key=aa39a9ea84034a95542baba3d72d6774&token=ATTAa832ee0c3ba24e3472b532ccfcd0ef772b8ea18f20565e0a8035b088126a6c5e62D330AD",
+			"time": 233,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 500ms": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 500ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				233
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 500ms": true
+				}
+			]
+		},
+		{
+			"id": "381fd7c9-93c2-4b5b-bd8a-0d11451d718f",
+			"name": "Create a new board",
+			"url": "https://api.trello.com/1/boards/?name=Board adn4di&key=aa39a9ea84034a95542baba3d72d6774&token=ATTAa832ee0c3ba24e3472b532ccfcd0ef772b8ea18f20565e0a8035b088126a6c5e62D330AD",
+			"time": 433,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 500ms": true,
+				"Value of 'name' is a string": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 500ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Value of 'name' is a string": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				433
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 500ms": true,
+					"Value of 'name' is a string": true
+				}
+			]
+		},
+		{
+			"id": "6cdb4962-8155-495e-85b4-b4c99940a2cf",
+			"name": "Get new board",
+			"url": "https://api.trello.com/1/boards/660463d2d11ce5c6a1cf752c?key=aa39a9ea84034a95542baba3d72d6774&token=ATTAa832ee0c3ba24e3472b532ccfcd0ef772b8ea18f20565e0a8035b088126a6c5e62D330AD",
+			"time": 204,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 500ms": true,
+				"Value of 'name' is a string": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 500ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Value of 'name' is a string": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				204
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 500ms": true,
+					"Value of 'name' is a string": true
+				}
+			]
+		},
+		{
+			"id": "b2ad7fa8-a3d2-4fab-9505-03018ec87613",
+			"name": "Lists of a board",
+			"url": "https://api.trello.com/1/boards/660463d2d11ce5c6a1cf752c/lists?key=aa39a9ea84034a95542baba3d72d6774&token=ATTAa832ee0c3ba24e3472b532ccfcd0ef772b8ea18f20565e0a8035b088126a6c5e62D330AD",
+			"time": 200,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 500ms": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 500ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				200
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 500ms": true
+				}
+			]
+		},
+		{
+			"id": "7d3ce9c2-0822-46a6-becd-5ea1a19c9030",
+			"name": "Create a new list on the left",
+			"url": "https://api.trello.com/1/boards/660463d2d11ce5c6a1cf752c/lists?name=List on left vg6l5a&key=aa39a9ea84034a95542baba3d72d6774&token=ATTAa832ee0c3ba24e3472b532ccfcd0ef772b8ea18f20565e0a8035b088126a6c5e62D330AD&pos=top",
+			"time": 243,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 500ms": true,
+				"Value of 'name' is a string": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 500ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Value of 'name' is a string": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				243
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 500ms": true,
+					"Value of 'name' is a string": true
+				}
+			]
+		},
+		{
+			"id": "c63f10a0-d36e-4ad9-b770-4354ae6e9620",
+			"name": "Create a new list on the right",
+			"url": "https://api.trello.com/1/boards/660463d2d11ce5c6a1cf752c/lists?name=List on right zp9w0a&key=aa39a9ea84034a95542baba3d72d6774&token=ATTAa832ee0c3ba24e3472b532ccfcd0ef772b8ea18f20565e0a8035b088126a6c5e62D330AD&pos=bottom",
+			"time": 360,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 500ms": true,
+				"Value of 'name' is a string": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 500ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Value of 'name' is a string": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				360
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 500ms": true,
+					"Value of 'name' is a string": true
+				}
+			]
+		},
+		{
+			"id": "4a2044a9-0078-4905-83ac-1c4ecffa0b47",
+			"name": "Lists of a board after creation",
+			"url": "https://api.trello.com/1/boards/660463d2d11ce5c6a1cf752c/lists?key=aa39a9ea84034a95542baba3d72d6774&token=ATTAa832ee0c3ba24e3472b532ccfcd0ef772b8ea18f20565e0a8035b088126a6c5e62D330AD",
+			"time": 198,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 500ms": true,
+				"id is a string": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 500ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"id is a string": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				198
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 500ms": true,
+					"id is a string": true
+				}
+			]
+		},
+		{
+			"id": "81ad2cfa-8261-4054-bc01-116f1c16a6de",
+			"name": "A new card on left list",
+			"url": "https://api.trello.com/1/cards?idList=660463d34b9e01d84cdd9047&key=aa39a9ea84034a95542baba3d72d6774&token=ATTAa832ee0c3ba24e3472b532ccfcd0ef772b8ea18f20565e0a8035b088126a6c5e62D330AD&name=Card ho7pq",
+			"time": 403,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 500ms": true,
+				"Value of 'id' is a string": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 500ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Value of 'id' is a string": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				403
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 500ms": true,
+					"Value of 'id' is a string": true
+				}
+			]
+		},
+		{
+			"id": "943d9fb1-d8de-455e-bcf9-02971651df64",
+			"name": "A new card on right list",
+			"url": "https://api.trello.com/1/cards?idList=660463d4f7396131d9f206f3&key=aa39a9ea84034a95542baba3d72d6774&token=ATTAa832ee0c3ba24e3472b532ccfcd0ef772b8ea18f20565e0a8035b088126a6c5e62D330AD",
+			"time": 333,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 500ms": true,
+				"Value of 'id' is a string": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 500ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Value of 'id' is a string": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				333
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 500ms": true,
+					"Value of 'id' is a string": true
+				}
+			]
+		},
+		{
+			"id": "771e0a81-aa22-45a9-9250-13c6b6ab8f8e",
+			"name": "Get Cards in a LeftList",
+			"url": "https://api.trello.com/1/lists/660463d34b9e01d84cdd9047/cards?key=aa39a9ea84034a95542baba3d72d6774&token=ATTAa832ee0c3ba24e3472b532ccfcd0ef772b8ea18f20565e0a8035b088126a6c5e62D330AD",
+			"time": 199,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 500ms": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 500ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				199
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 500ms": true
+				}
+			]
+		},
+		{
+			"id": "b54f9518-6557-46ce-83f3-7b9b6bd40472",
+			"name": "Update a board",
+			"url": "https://api.trello.com/1/boards/660463d2d11ce5c6a1cf752c?key=aa39a9ea84034a95542baba3d72d6774&token=ATTAa832ee0c3ba24e3472b532ccfcd0ef772b8ea18f20565e0a8035b088126a6c5e62D330AD&name=GoIT&desc=board for learning",
+			"time": 298,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 500ms": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 500ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				298
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 500ms": true
+				}
+			]
+		},
+		{
+			"id": "f0d04933-b68d-4d40-8e60-5611552299ab",
+			"name": "Delete a board",
+			"url": "https://api.trello.com/1/boards/660463d2d11ce5c6a1cf752c?key=aa39a9ea84034a95542baba3d72d6774&token=ATTAa832ee0c3ba24e3472b532ccfcd0ef772b8ea18f20565e0a8035b088126a6c5e62D330AD",
+			"time": 1309,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 500ms": false
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 500ms": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				1309
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 500ms": false
+				}
+			]
+		},
+		{
+			"id": "7da7f5b5-750a-4444-b416-aed693af90a9",
+			"name": "Check the deleted board",
+			"url": "https://api.trello.com/1/boards/660463d2d11ce5c6a1cf752c?key=aa39a9ea84034a95542baba3d72d6774&token=ATTAa832ee0c3ba24e3472b532ccfcd0ef772b8ea18f20565e0a8035b088126a6c5e62D330AD",
+			"time": 182,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status code is 404": true,
+				"Response time is less than 500ms": true
+			},
+			"testPassFailCounts": {
+				"Status code is 404": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 500ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				182
+			],
+			"allTests": [
+				{
+					"Status code is 404": true,
+					"Response time is less than 500ms": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 4831,
+	"collection": {
+		"requests": [
+			{
+				"id": "47273f3a-1a21-4511-97de-1ff010829b0a",
+				"method": "GET"
+			},
+			{
+				"id": "d1e14d08-47c9-4e58-afc3-ddf1f685ffb4",
+				"method": "GET"
+			},
+			{
+				"id": "381fd7c9-93c2-4b5b-bd8a-0d11451d718f",
+				"method": "POST"
+			},
+			{
+				"id": "6cdb4962-8155-495e-85b4-b4c99940a2cf",
+				"method": "GET"
+			},
+			{
+				"id": "b2ad7fa8-a3d2-4fab-9505-03018ec87613",
+				"method": "GET"
+			},
+			{
+				"id": "7d3ce9c2-0822-46a6-becd-5ea1a19c9030",
+				"method": "POST"
+			},
+			{
+				"id": "c63f10a0-d36e-4ad9-b770-4354ae6e9620",
+				"method": "POST"
+			},
+			{
+				"id": "4a2044a9-0078-4905-83ac-1c4ecffa0b47",
+				"method": "GET"
+			},
+			{
+				"id": "81ad2cfa-8261-4054-bc01-116f1c16a6de",
+				"method": "POST"
+			},
+			{
+				"id": "943d9fb1-d8de-455e-bcf9-02971651df64",
+				"method": "POST"
+			},
+			{
+				"id": "771e0a81-aa22-45a9-9250-13c6b6ab8f8e",
+				"method": "GET"
+			},
+			{
+				"id": "b54f9518-6557-46ce-83f3-7b9b6bd40472",
+				"method": "PUT"
+			},
+			{
+				"id": "f0d04933-b68d-4d40-8e60-5611552299ab",
+				"method": "DELETE"
+			},
+			{
+				"id": "7da7f5b5-750a-4444-b416-aed693af90a9",
+				"method": "DELETE"
+			}
+		]
+	}
+}

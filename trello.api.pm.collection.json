@@ -509,7 +509,7 @@
 							"  pm.expect(typeof responseBodyVar.id).to.be.a('string');\r",
 							"});\r",
 							"\r",
-							"// Перевірка масиву id дошок\r",
+							"/* Перевірка масиву id дошок\r",
 							"pm.test(\"Board ids are not empty\", function() {\r",
 							"    // Отримаємо об'єкт JSON з відповіді\r",
 							"    let responseBody = pm.response.json();\r",
@@ -528,7 +528,7 @@
 							"    // Зберігаємо масив id дошок в змінну оточення\r",
 							"    pm.environment.set(\"boardIds\", boardIds);\r",
 							"});\r",
-							""
+							"*/"
 						],
 						"type": "text/javascript",
 						"packages": {}
@@ -586,7 +586,23 @@
 							"// Перевірка типу властивості \"id\"\r",
 							"pm.test(\"Value of 'id' is a string\", function () {\r",
 							"    pm.expect(pm.response.json().id).to.be.a(\"string\");\r",
-							"});"
+							"});\r",
+							"\r",
+							"let jsonData = pm.response.json();\r",
+							"pm.environment.set (\"cardId\", jsonData.id);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"// Генеруємо рандомне ім'я для нової дошки\r",
+							"const cardName = \"Card \" + Math.random().toString(36).substring(7);\r",
+							"// Тепер помістимо це ім'я в параметри запросу\r",
+							"pm.variables.set(\"name\", cardName);"
 						],
 						"type": "text/javascript",
 						"packages": {}
@@ -601,7 +617,7 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "https://api.trello.com/1/cards?idList={{LeftListId}}&key={{apiKey}}&token={{apiToken}}",
+					"raw": "https://api.trello.com/1/cards?idList={{LeftListId}}&key={{apiKey}}&token={{apiToken}}&name={{name}}",
 					"protocol": "https",
 					"host": [
 						"api",
@@ -624,6 +640,10 @@
 						{
 							"key": "token",
 							"value": "{{apiToken}}"
+						},
+						{
+							"key": "name",
+							"value": "{{name}}"
 						}
 					]
 				}
@@ -695,7 +715,7 @@
 			"response": []
 		},
 		{
-			"name": "Lists of a board",
+			"name": "Get Cards in a LeftList",
 			"event": [
 				{
 					"listen": "test",
@@ -711,7 +731,7 @@
 							"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
 							"});\r",
 							"\r",
-							"// Перевірка массиву id дошок\r",
+							"/* Перевірка массиву id дошок\r",
 							"pm.test(\"List ids are not empty\", function() {\r",
 							"    // Отримуємо об'єкт JSON з відповіді\r",
 							"    let responseBody = pm.response.json();\r",
@@ -730,7 +750,7 @@
 							"    // Зберігаємо масив id дошок в змінну оточення\r",
 							"    pm.environment.set(\"listIds\", listIds);\r",
 							"});\r",
-							""
+							"*/"
 						],
 						"type": "text/javascript",
 						"packages": {}
@@ -741,7 +761,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://api.trello.com/1/boards/{{boardId}}/lists?key={{apiKey}}&token={{apiToken}}",
+					"raw": "https://api.trello.com/1/lists/{{LeftListId}}/cards?key={{apiKey}}&token={{apiToken}}",
 					"protocol": "https",
 					"host": [
 						"api",
@@ -750,9 +770,9 @@
 					],
 					"path": [
 						"1",
-						"boards",
-						"{{boardId}}",
-						"lists"
+						"lists",
+						"{{LeftListId}}",
+						"cards"
 					],
 					"query": [
 						{
@@ -783,7 +803,8 @@
 							"// Перевірка часу виконання запиту\r",
 							"pm.test(\"Response time is less than 500ms\", function () {\r",
 							"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
-							"});"
+							"});\r",
+							""
 						],
 						"type": "text/javascript",
 						"packages": {}
