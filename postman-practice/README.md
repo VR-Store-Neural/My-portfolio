@@ -2,7 +2,7 @@
 
 Створення запитів для Trello API: 
 
-postman-practice/trello.api.pm.collection.json
+https://github.com/VR-Store-Neural/My-portfolio/blob/main/postman-practice/trello.api.pm.collection.json
 
 Документація: 
 
@@ -10,11 +10,11 @@ https://developer.atlassian.com/cloud/trello/rest/api-group-lists/#api-group-lis
 
 Скріншоти виконання запитів: 
 
-postman-practice/trello.api.requests.screenshots
+https://github.com/VR-Store-Neural/My-portfolio/tree/main/postman-practice/trello.api.requests.screenshots
 
 Створення запитів для Dummyapi.io: 
 
-postman-practice/dummyapi.io.pm.collection.json
+https://github.com/VR-Store-Neural/My-portfolio/blob/main/postman-practice/dummyapi.io.pm.collection.json
 
 Документація: 
 
@@ -22,4 +22,4 @@ https://dummyapi.io/docs
 
 Скріншоти виконання запитів: 
 
-postman-practice/dummyapi.io.requests.screenshots
+https://github.com/VR-Store-Neural/My-portfolio/tree/main/postman-practice/dummyapi.io.requests.screenshots
