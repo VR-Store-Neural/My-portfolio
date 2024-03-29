@@ -15,7 +15,7 @@
 7) Поєднати запити 5 і 6, додати кількість проданих квитків
 8) Показати суму зборів і скільки було продано квитків на кожен сеанс окремо із зазначенням назви фільму
 
-Виконання: https://github.com/VR-Store-Neural/sql-practice/blob/master/cinema.sql
+Виконання: https://github.com/VR-Store-Neural/My-portfolio/blob/main/sql-practice/cinema.sql
 
 --------------------------------------------------------------------------------
 
@@ -28,4 +28,4 @@
 5) Отримати ім'я замовника з найменшою середньою вартістю контрактів. Показати customer_name, среднее значение amount
 6) Знайти відділ, який уклав контрактів на найбільшу суму. Показати: department_name, sum
 
-Виконання: https://github.com/VR-Store-Neural/sql-practice/blob/master/company.sql
+Виконання: https://github.com/VR-Store-Neural/My-portfolio/blob/main/sql-practice/company.sql
