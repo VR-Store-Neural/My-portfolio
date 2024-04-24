@@ -1,31 +1,36 @@
-Завдання про кінотеатр:
-Є кінотеатр, у ньому йдуть фільми. У фільму є назва, тривалість (нехай для простоти буде 60, 90 або 120 хвилин), ціна квитка (у різний час і дні може бути різною), час початку сеансу (один фільм може бути показаний кілька разів у різний час за різну ціну) . Також є інформація про куплені квитки (номер квитка, на який сеанс).
+<div>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" title="mysql" alt="mysql" width="40" height="40"/>&nbsp
+  <img src="https://asset.brandfetch.io/id4nWEruqq/idP6tbHvdl.svg" title="dbeaver" alt="dbeaver" width="40" height="40"/>&nbsp
+</div>
 
-Завдання:
+Tasks about the cinema:
+There is a cinema, movies are shown there. The movie has a title, duration (let it be 60, 90 or 120 minutes for simplicity), ticket price (can be different at different times and days), start time (one movie can be shown several times at different times for different prices) . There is also information about purchased tickets (ticket number, for which session).
 
-скласти грамотну нормалізовану схему зберігання цих даних у БД. Внести до неї 4-5 фільмів, розклад на один день та кілька проданих квитків.
-Зробити запити, які рахують та виводять у зрозумілому вигляді:
+Tasks:
 
-1) Скільки квитків продано на один будь-який фільм
-2) Скільки квитків продано на один будь-який сеанс
-3) Показати список усіх покупців квитків на один будь-який сеанс з номерами іх місць
-4) Показати загальну кількість квитків, проданих на кожен фільм 
-5) Показати загальну суму зборів по кожному фільму
-6) Показати загальну суму зборів по всім фільмам
-7) Поєднати запити 5 і 6, додати кількість проданих квитків
-8) Показати суму зборів і скільки було продано квитків на кожен сеанс окремо із зазначенням назви фільму
+make a competent normalized scheme for storing this data in the database. Enter 4-5 films, the schedule for one day and several sold tickets.
+Make queries that count and output in an understandable form:
 
-Виконання: https://github.com/VR-Store-Neural/sql-practice/blob/master/cinema.sql
+1) How many tickets were sold for any one movie
+2) How many tickets were sold for any one session
+3) Display a list of all ticket buyers for one session with their seat numbers
+4) Show the total number of tickets sold for each movie
+5) Show the total amount of fees for each film
+6) Show the total amount of fees for all films
+7) Combine requests 5 and 6, add the number of tickets sold
+8) Show the amount of fees and how many tickets were sold for each screening separately, indicating the name of the film
+
+Implementation: https://github.com/VR-Store-Neural/sql-practice/blob/master/cinema.sql
 
 --------------------------------------------------------------------------------
 
-Завдання: Створити таблиці department(id, name_department), employees(id, department_id, name_employee), customers(id, customer_id, location_customer), contract(id, customer_id, amount), executor(tab_no, contract_id) для відстеження договорів з клієнтами та відповідними виконавцями замовлень. Наповнити таблиці даними. Зробити запити:
+Task: Create tables department(id, name_department), employees(id, department_id, name_employee), customers(id, customer_id, location_customer), contract(id, customer_id, amount), executor(tab_no, contract_id) to track contracts with customers and by the respective executors of the orders. Fill the tables with data. Make inquiries:
 
-1) Отримати інформацію про всі контракти, які пов'язані з працівниками з департаменту «Logistic». Показати contract_id, employee_name
-2) Отримати середню вартість контрактів, укладених зі співробітником John Smith. Показати середнє значення amount
-3) Отримати локацію, яка найчастіше зустрічається серед замовників. Показати location, count
-4) Отримати контракти однакової вартості. Показати count, amount
-5) Отримати ім'я замовника з найменшою середньою вартістю контрактів. Показати customer_name, среднее значение amount
-6) Знайти відділ, який уклав контрактів на найбільшу суму. Показати: department_name, sum
+1) Get information about all contracts related to employees from the "Logistic" department. Show contract_id, employee_name
+2) Obtain the average cost of contracts concluded with a John Smith employee. Show the average value of amount
+3) Get the location that is most often found among customers. Show location, count
+4) Get contracts of equal value. Show count, amount
+5) Get the name of the customer with the lowest average value of the contracts. Show customer_name, average amount
+6) Find the department that concluded contracts for the largest amount. Show: department_name, sum
 
-Виконання: https://github.com/VR-Store-Neural/sql-practice/blob/master/company.sql
+Implementation: https://github.com/VR-Store-Neural/sql-practice/blob/master/company.sql

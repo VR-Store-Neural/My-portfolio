@@ -1,5 +1,5 @@
 <div>
-  <img src="https://asset.brandfetch.io/idIq_kF0rb/idv3zwmSiY.jpeg" title="Cypress" alt="devtools" width="40" height="40"/>&nbsp
+  <img src="https://asset.brandfetch.io/idIq_kF0rb/idv3zwmSiY.jpeg" title="cypress" alt="cypress" width="40" height="40"/>&nbsp
 </div>
 
 Auto-tests using Cypress on the website of the online store https://vr-store.com.ua:
