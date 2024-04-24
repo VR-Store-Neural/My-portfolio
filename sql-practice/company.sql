@@ -1,4 +1,4 @@
--- Створення таблиць
+-- Creating tables
 
 CREATE TABLE department (
 	id INTEGER,
@@ -32,7 +32,7 @@ CREATE TABLE executor (
 	contract_id INTEGER
 );
 
--- Наповнення таблиць
+-- Filling in tables
 
 INSERT INTO department(
 	id, name)
@@ -263,14 +263,14 @@ INSERT INTO executor(
 	tab_no, contract_id)
 	VALUES(5,25);
   
--- Додавання відносин між таблицями
+-- Adding dependencies between tables
 
 ALTER TABLE employees ADD FOREIGN KEY (department_id) REFERENCES department (id);
 ALTER TABLE executor ADD FOREIGN KEY (tab_no) REFERENCES employees (id);
 ALTER TABLE executor ADD FOREIGN KEY (contract_id) REFERENCES contract (id);
 ALTER TABLE contract ADD FOREIGN KEY (customer_id) REFERENCES customer (id);
 
--- Поєднання таблиць
+-- Join tables
 
 SELECT ex.tab_no, dp.name, em.name, ct.amount, cs.customer_name, cs.location FROM executor ex
 	JOIN employees em ON em.id = ex.tab_no
@@ -278,8 +278,8 @@ SELECT ex.tab_no, dp.name, em.name, ct.amount, cs.customer_name, cs.location FRO
 	JOIN contract ct ON ct.id = ex.contract_id
 	JOIN customer cs ON cs.id = ct.customer_id;
 
--- Задача 1. Знайти інформацію про всі контракти, які пов'язані з працівниками з департаменту «Logistic». 
--- Показати contract_id, employee_name
+-- Exercise 1. Find information about all contracts that are related to employees from the department «Logistic». 
+-- Show: contract_id, employee_name
 
 SELECT ex.contract_id, em.name AS employee_name FROM executor ex
 	JOIN employees em ON em.id = ex.tab_no
@@ -288,16 +288,16 @@ SELECT ex.contract_id, em.name AS employee_name FROM executor ex
 WHERE dp.name = 'Logistic';
 
 
--- Задача 2. Знайти середню вартість контрактів, укладених зі співробітником John Smith. 
--- Показати середнє значення amount
+-- Exercise 2. Find the average cost of contracts concluded with an employee John Smith. 
+-- Show average value of the amount
 
 SELECT ROUND(AVG(ct.amount), '2') AS amount_average FROM executor ex
 	JOIN employees em ON em.id = ex.tab_no
 	JOIN contract ct ON ct.id = ex.contract_id
 WHERE em.name = 'John Smith';
 
--- Задача 3. Знайти локацію, яка найчастіше зустрічається серед замовников. 
--- Показати location, count
+-- Exercise 3. Find the location that is most often found among customers. 
+-- Show: location, count
 
 SELECT location, COUNT(location) FROM customer
 GROUP BY (location)
@@ -307,15 +307,15 @@ ORDER BY COUNT(location)
 DESC
 LIMIT 1);
 
--- Задача 4. Знайти контракти однакової вартості.
--- Показати count, amount
+-- Exercise 4. Find contracts of equal value.
+-- Show: count, amount
 
 SELECT COUNT(amount), amount FROM contract
 GROUP BY (amount)
 HAVING COUNT(amount) >= 2;
 
--- Задача 5. Знайти замовника з найменшою середньою вартістю контрактів. 
--- Показати customer_name, среднее значение amount
+-- Exercise 5. Find the customer with the lowest average contract value. 
+-- Show: customer_name, среднее значение amount
 
 SELECT cs.customer_name, ROUND(AVG(ct.amount), '2') AS amount_average FROM contract ct
 	JOIN customer cs ON cs.id = ct.customer_id
@@ -327,8 +327,8 @@ ORDER BY AVG(ct.amount)
 ASC
 LIMIT 1);
 
--- Задача 6. Знайти відділ, який уклав контрактів на найбільшу суму.
--- Показати: department_name, sum
+-- Exercise 6. Find the department that has signed contracts for the largest amount.
+-- Show: department_name, sum
 
 SELECT dp.name AS department_name, SUM(ct.amount) FROM executor ex
 	JOIN employees em ON em.id = ex.tab_no

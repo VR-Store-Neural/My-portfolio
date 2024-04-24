@@ -1,4 +1,4 @@
--- Створення таблиць
+-- Creating tables
 
 create table Movies (
 			movie_id int,
@@ -30,8 +30,9 @@ create table SoldTickets (
     			customer_name varchar(255),
     			primary key (ticket_id),
     			foreign key (schedule_id) references Schedule(schedule_id)
+);
 
--- Наповнення таблиць
+-- Filling in tables
 
 INSERT INTO Movies(movie_id, title, duration)
   VALUES
@@ -164,15 +165,15 @@ VALUES
     	(99, 2, 20, 'Erin Gray'),
     	(100, 3, 1, 'Rosie Watson');
 
--- Як перевірити, чи не дублюються продані квитки:
+-- Checking whether sold tickets are duplicates:
 
 SELECT schedule_id, seat_number, COUNT(*)
 	FROM SoldTickets
 	GROUP BY  schedule_id, seat_number
 	HAVING COUNT(*) > 1;
 
--- Виявилося, що є квитки, що дублюються.
--- Тому, я вручну поміняв дані в таблиці SoldTickets
+-- It turned out that there are duplicate tickets.
+-- Therefore, I manually changed the data in the table "SoldTickets"
 
 UPDATE SoldTickets
 	SET seat_number = 19
@@ -217,7 +218,7 @@ UPDATE SoldTickets
 	SET seat_number = 18
 	WHERE ticket_id = 78;
     
--- Задача 1: Скільки квитків продано на фільм Dovbush?    
+-- Exercise 1: How many tickets were sold for the movie Dovbush?    
     
 SELECT m.title AS movie_title, COUNT(st.ticket_id) AS tickets_sold
 	FROM Movies m
@@ -226,7 +227,7 @@ SELECT m.title AS movie_title, COUNT(st.ticket_id) AS tickets_sold
 	WHERE m.movie_id = 2
 	GROUP BY m.title;
 	
--- Задача 2: Скільки квитків продано на сеанс о 2100?    
+-- Exercise 2: How many tickets were sold for session at 2100?    
     
 SELECT m.title AS movie_title, COUNT(st.ticket_id) AS tickets_sold
 	FROM Movies m
@@ -235,14 +236,14 @@ SELECT m.title AS movie_title, COUNT(st.ticket_id) AS tickets_sold
 	WHERE s.schedule_id = 7
 	GROUP BY m.title;
     
---  Задача 3: Показати усіх покупців квитків на сеанс 2100 з номерами іх місць
+--  Exercise 3: Show all ticket buyers for session 2100 with their seat numbers
     
 SELECT ticket_id, seat_number, Customer_Name
 	FROM SoldTickets st
 	JOIN Schedule s on s.schedule_id = st.schedule_id
 	WHERE start_time = '2024-04-24 21:00';
   
--- Задача 4: Показати загальну кількість квитків, проданих на кожен фільм  
+-- Exercise 4: Show the total amount of tickets sold for each movie 
   
 SELECT m.title AS movie_title, COUNT(st.ticket_id) AS total_tickets
 	FROM Movies m
@@ -250,7 +251,7 @@ SELECT m.title AS movie_title, COUNT(st.ticket_id) AS total_tickets
 	JOIN SoldTickets st ON s.schedule_id = st.schedule_id
 	GROUP BY m.title; 
 
--- Задача 5: Показати загальну суму зборів по кажному фільму
+-- Exercise 5: Show the total amount of fees for each movie
 
 SELECT m.title AS movie_title, SUM(tp.price) AS total_revenue
 	FROM Movies m
@@ -260,7 +261,7 @@ SELECT m.title AS movie_title, SUM(tp.price) AS total_revenue
 	GROUP BY m.title
 	ORDER BY total_revenue DESC;
 
--- Задача 6: Показати загальну суму зборів по всім фільмам
+-- Exercise 6: Show the total amount of fees for all films
 
 SELECT 'Total', SUM(tp.price) AS total_revenue
 	FROM Movies m
@@ -268,7 +269,7 @@ SELECT 'Total', SUM(tp.price) AS total_revenue
 	JOIN TicketPrices tp ON s.schedule_id = tp.schedule_id
 	JOIN SoldTickets st ON s.schedule_id = st.schedule_id;
 
--- Задача 7: Поєднати останні два запити, додати стовпчик із кількістю проданих квітків усього і на кожен фільм окремо
+-- Exercise 7: Combine the last two requests, add a column with the number of tickets sold in total and for each movie separately
 
 SELECT movie_title, total_revenue, total_tickets_sold
 	FROM (
@@ -288,7 +289,7 @@ SELECT movie_title, total_revenue, total_tickets_sold
 			JOIN SoldTickets st ON s.schedule_id = st.schedule_id
 	) AS combined_data
   
--- Задача 8: Показати кількість проданих квитків по кожному сеансу, суму, на яку продані квитки на кожний сеанс, назву фільму сеансу
+-- Exercise 8: Show the number of tickets sold for each session, the amount for which the tickets were sold for each session, the name of the movie of the session
 
 SELECT  s.schedule_id AS schedule, m.title as movie_title, COUNT(st.ticket_id) AS total_tickets_sold, SUM(tp.price) AS total_revenue
 	FROM schedule s
@@ -298,10 +299,10 @@ SELECT  s.schedule_id AS schedule, m.title as movie_title, COUNT(st.ticket_id) A
 	GROUP BY schedule
 	ORDER BY schedule;
   
--- Видалення даних з таблиці  SoldTickets 
+-- Deleting data from a table "SoldTickets" 
   
 DELETE FROM SoldTickets;
 
--- Видалення таблиці SoldTickets
+-- Deleting a table "SoldTickets"
 
 DROP TABLE SoldTickets;
