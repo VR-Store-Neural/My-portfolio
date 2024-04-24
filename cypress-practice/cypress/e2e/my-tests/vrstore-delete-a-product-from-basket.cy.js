@@ -4,79 +4,79 @@ it("delete a product from basket", () => {
   cy.visit("https://vr-store.com.ua/");
   cy.viewport(1920, 1080);
 
-  // Вибір мови сайту
+  // Site language selection
 
   cy.get(".lang-menu__item.is-active .lang-menu__link").then(($element) => {
     if (!$element.text().includes("Укр")) {
       cy.contains("Укр").click({ force: true });
     } else {
-      cy.log("Українську мову вже обрано.");
+      cy.log("The Ukrainian language has already been selected.");
     }
   });
 
-  // Пошук товару
+  // Product search
 
   cy.get(".search__input").type("playstation");
   cy.get(".search__button").click();
 
-  // Додавання товарів у кошик
+  // Adding products to the cart
 
-  let addedProducts = 0; // Змінна для відстеження кількості доданих товарів
+  let addedProducts = 0; // A variable to track the number of added products
 
   cy.get(".catalog-grid__item").each(($element) => {
     cy.wrap($element).then(($item) => {
       if ($item.find(".productSticker-item.__new").length > 0) {
         if (addedProducts < 3) {
-          // Перевіряємо, щоб не додати більше трьох товарів
-          cy.wrap($item).find(".btn-content").click(); // Клікаємо на кнопку "Купити"
+          // We check not to add more than three products
+          cy.wrap($item).find(".btn-content").click(); // Click on the button "Купити"
           cy.get("body").click("topLeft").wait(1000);
-          addedProducts++; // Збільшуємо лічильник доданих товарів
+          addedProducts++; // We increase the counter of added goods
         } else {
-          return false; // Завершуємо цикл, якщо додано три товари
+          return false; // We complete the cycle if three products have been added
         }
       }
     });
   });
   cy.get(".basket__link").click({ force: true });
 
-  // Перевірка суми у кошику
+  // Checking the amount in the cart
 
-  let currentTotal0 = 0; // Оголошуємо змінну для зберігання поточної суми
+  let currentTotal0 = 0; // We declare a variable to store the current amount
 
   cy.get(".__cost > .cart-cost")
     .each(($element, index) => {
-      // Отримуємо текст з кожного елемента і перетворюємо його в число
+      // We get the text from each element and turn it into a number
       cy.wrap($element)
         .invoke("text")
         .then((text) => {
-          const price0 = parseInt(text.replace(/\s/g, "").replace("$", "")); // Перетворюємо текст ціни в ціле число, вилучаючи пробіли
+          const price0 = parseInt(text.replace(/\s/g, "").replace("$", "")); // We convert the price text into an integer, removing spaces
           if (index === 0) {
-            // Якщо це перший елемент, просто зберігаємо його значення як поточну суму
+            // If it is the first element, we simply store its value as the current amount
             currentTotal0 = price0;
           } else {
-            // Якщо це не перший елемент, додаємо його ціну до поточної суми
+            // If it is not the first item, we add its price to the current amount
             currentTotal0 += price0;
           }
         });
     })
     .then(() => {
-      // Після того як пройшли всі елементи, отримана сума повинна дорівнювати значенню в елементі "cart-footer-b"
+      // After all the elements have been passed, the resulting sum should be equal to the value in the element "cart-footer-b"
       cy.get(".cart-footer-b")
         .invoke("text")
         .then((text) => {
           const totalPrice0 = parseInt(
             text.replace(/\s/g, "").replace("$", "")
-          ); // Перетворюємо текст суми в ціле число, вилучаючи пробіли
-          expect(currentTotal0).to.equal(totalPrice0); // Перевіряємо, чи дорівнює сума отриманій сумі в корзині
+          ); // We convert the sum text into an integer, removing spaces
+          expect(currentTotal0).to.equal(totalPrice0); // We check whether the amount is equal to the received amount in the basket
         });
     });
 
-  // Видалення товару з кошику
+  // Removing the product from the cart
 
   cy.get(".__minus").eq(1).click({ force: true });
   cy.wait(1000);
 
-  // Перевірка суми у кошику після видалення одного товару
+  // Checking the amount in the cart after removing one product
 
   let currentTotal1 = 0; 
 

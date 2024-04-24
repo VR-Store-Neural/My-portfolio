@@ -7,7 +7,7 @@ it("registration", () => {
     if (!$element.text().includes("Укр")) {
       cy.contains("Укр").click({ force: true });
     } else {
-      cy.log("Українську мову вже обрано.");
+      cy.log("The Ukrainian language has already been selected.");
     }
   });
   cy.get(".userbar__button").click();
