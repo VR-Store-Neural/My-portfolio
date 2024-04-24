@@ -1,29 +1,33 @@
-Автотести з використанням Cypress на сайті онлайн-магазину https://vr-store.com.ua:
+<div>
+  <img src="https://asset.brandfetch.io/idIq_kF0rb/idv3zwmSiY.jpeg" title="Cypress" alt="devtools" width="40" height="40"/>&nbsp
+</div>
 
-1) Регістрація нового користувача
+Auto-tests using Cypress on the website of the online store https://vr-store.com.ua:
+
+1) New user registration
 
 https://github.com/VR-Store-Neural/My-portfolio/blob/main/cypress-practice/vrstore-registration.cy.js
 
-2) Авторизація
+2) Autorization
 
 https://github.com/VR-Store-Neural/My-portfolio/blob/main/cypress-practice/vrstore-authorization.cy.js
 
-3) Додавання товарів до листу бажань
+3) Adding products to wish list
 
 https://github.com/VR-Store-Neural/My-portfolio/blob/main/cypress-practice/vrstore-my-wishes.cy.js
 
-4) Додавання продуктів до кошику
+4) Adding products to the basket
 
 https://github.com/VR-Store-Neural/My-portfolio/blob/main/cypress-practice/vrstore-adding-a-product.cy.js
 
-5) Перевірка правильності розрахунку суми у кошику
+5) Checking the correctness of the calculation of the amount in the basket
 
 https://github.com/VR-Store-Neural/My-portfolio/blob/main/cypress-practice/vrstore-delete-a-product-from-basket.cy.js
 
-6) Сортування товарів на сторінці за зростанням ціни
+6) Sorting products on the page by increasing price
 
 https://github.com/VR-Store-Neural/My-portfolio/blob/main/cypress-practice/vrstore-sort-products-by-price-down-up.cy.js
 
-7) Сортування товарів на сторінці за зниженням ціни
+7) Sorting products on the page by decreasing price
 
 https://github.com/VR-Store-Neural/My-portfolio/blob/main/cypress-practice/vrstore-sort-products-by-price-up-down.cy.js
