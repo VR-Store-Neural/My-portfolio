@@ -1,8 +1,8 @@
-# Hi! My name is Aleksandr.
-## Welcome to my GitHub portfolio!
+# Hi! Welcome to my GitHub portfolio!
 
 ### 👨‍💻 About me:
 
+My name is Aleksandr.
 I am looking for the position of junior QA engineer.
 
 #### 📫 Contact me: [![LinkedIn Badge](https://img.shields.io/badge/-Detynenko-blue?style=flat&logo=LinkedIn&logoColor=white)](https://www.linkedin.com/in/aleksandr-detynenko0772263/) [![Gmail Badge](https://img.shields.io/badge/-Gmail-red?style=flat&logo=Gmail&logoColor=white)](mailto:detynenko@gmail.com)
